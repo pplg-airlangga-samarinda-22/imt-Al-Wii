@@ -6,11 +6,11 @@ return $berat / ($tinggi * $tinggi);
     function kategoriBMI($bmi) {
     if ($bmi < 17.0) {
         return "Kurus, Kekurangan berat badan berat";
-    } elseif ($bmi >= 17.0 && $bmi >= 18.4) {
+    } elseif ($bmi >= 17.0 && $bmi <= 18.4) {
         return "Kurus, Kekurangan berat badan ringan";
     } elseif ($bmi >= 18.5 && $bmi <= 25.0) {
         return "Normal";
-    } elseif ($bmi >= 25.1 && $bmi <= 27.0) {
+    } elseif ($bmi <= 25.1 && $bmi <= 27.0) {
         return "Gemuk, Kelebihan berat badan tingkat ringan";
     } else {
         return "Gemuk, Kelebihan berat badan tingkat berat";
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<p>IMT Anda : " . number_format($bmi, 1) . "</p>";
         echo "<p>Kategori : $kategori</p>";
     } else {
-        echo "<p>Masukkan nilai berat dan tinggi yang valid</p>";
+        echo "<p>Nilai Yang di Masukkan Tidak Valid!</p>";
     }
 }
 ?>
